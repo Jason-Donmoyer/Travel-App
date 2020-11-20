@@ -25,7 +25,7 @@ app.use(express.static('dist'));
 
 // Setup Server
 
-const PORT = 3000;
+const PORT = 8080;
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);

@@ -9,7 +9,7 @@ const temp = document.getElementById('temp');
 const content = document.getElementById('content');
 const apiUrl = `api.openweathermap.org/data/2.5/weather?zip=`;
 const APIKey = '13113e1d1128465c8ea19117b412794e';
-const postUrl = 'http://localhost:3000/all';
+const postUrl = 'http://localhost:8080/all';
 
 
 // Create a new date instance dynamically with JS
@@ -75,7 +75,7 @@ const initiateProgram = async function () {
       feelings: feelings.value
     }
 
-    await postData('http://localhost:3000/', weatherData)
+    await postData('http://localhost:8080/', weatherData)
     updateUserInterface();
   }
 }
@@ -83,3 +83,10 @@ const initiateProgram = async function () {
 // Event listener to call main function
 
 generateWeather.addEventListener('click', initiateProgram);
+
+export {
+  getWeather,
+  postData,
+  updateUserInterface,
+  initiateProgram
+};
