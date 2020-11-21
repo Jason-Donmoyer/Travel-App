@@ -36,14 +36,30 @@ app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
 
-// GET route for /all route
+// GET routes
 
-app.get('/all', (req, res) => {
+app.get('/', (req, res) => {
+  res.sendFile('dist/index.html');
+});
+
+app.get('/results', (req, res) => {
   res.send(JSON.stringify(projectData));
   console.log('Get route called');
 });
 
 // POST route
+
+app.post('/results', async (req, res) => {
+  const response = await fetch(APIcall);
+
+  try {
+    const data = await response.json();
+    projectData = {};
+    res.send(data);
+  } catch (error) {
+    console.log(`There has been error: ${error}`);
+  }
+});
 
 app.post('/', (req, res) => {
   projectData.temp = req.body.temp;
