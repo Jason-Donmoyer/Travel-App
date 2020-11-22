@@ -6,6 +6,10 @@ dotenv.config();
 // Setup empty JS object to act as endpoint for all routes
 projectData = {};
 
+//API Keys
+GN_API_KEY = process.env.GN_API_KEY;
+
+
 // Require Express to run server and routes
 const express = require('express');
 
@@ -42,19 +46,22 @@ app.get('/', (req, res) => {
   res.sendFile('dist/index.html');
 });
 
-app.get('/results', (req, res) => {
-  res.send(JSON.stringify(projectData));
-  console.log('Get route called');
-});
+// app.get('/results', (req, res) => {
+//   res.send(JSON.stringify(projectData));
+//   console.log('Get route called');
+// });
 
 // POST route
 
-app.post('/results', async (req, res) => {
-  const response = await fetch(APIcall);
+app.get('/results', async (req, res) => {
+  const response = await fetch(`http://api.geonames.org/searchJSON?q=Old%20Bridge&country=US&maxRows=10&username=${GN_API_KEY}`);
 
   try {
     const data = await response.json();
-    projectData = {};
+    projectData = {
+      data
+    };
+    console.log([data.geonames[1].lat], [data.geonames[1].lng]);
     res.send(data);
   } catch (error) {
     console.log(`There has been error: ${error}`);
