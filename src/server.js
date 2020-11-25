@@ -53,8 +53,8 @@ app.get('/', (req, res) => {
 
 // POST route
 
-app.get('/results', async (req, res) => {
-  const response = await fetch(`http://api.geonames.org/searchJSON?q=Old%20Bridge&country=US&maxRows=10&username=${GN_API_KEY}`);
+app.post('/results', async (req, res) => {
+  const response = await fetch(`http://api.geonames.org/searchJSON?q=${req.body}&maxRows=10&username=${GN_API_KEY}`);
 
   try {
     const data = await response.json();
@@ -68,10 +68,14 @@ app.get('/results', async (req, res) => {
   }
 });
 
-app.post('/', (req, res) => {
-  projectData.temp = req.body.temp;
-  projectData.date = req.body.date;
-  projectData.feelings = req.body.feelings;
-  console.log('Post route called');
-  res.end();
+app.get('/results', (req, res) => {
+  app.send(projectData);
 });
+
+// app.post('/', (req, res) => {
+//   projectData.temp = req.body.temp;
+//   projectData.date = req.body.date;
+//   projectData.feelings = req.body.feelings;
+//   console.log('Post route called');
+//   res.end();
+// });

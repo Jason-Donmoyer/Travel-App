@@ -1,3 +1,10 @@
+import './js/getLocation';
+
+const { getLocation } = require('./js/getLocation'); 
+// import {
+//   getLocation
+// } from './js/getLocation';
+
 import './styles/style.scss';
 //import './js/app.js';
 
@@ -6,6 +13,13 @@ import './styles/style.scss';
 const callButton = document.getElementById('generate');
 
 //TEST FUNCTION
-callButton.addEventListener(('click'), () => {
-  alert("HIT IT BITCH!");
+callButton.addEventListener('click', (e) => {
+  getLocation(e);
+  console.log('clicked');
+  console.count();
 });
+
+
+export {
+  getLocation
+}

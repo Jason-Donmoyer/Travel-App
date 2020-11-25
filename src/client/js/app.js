@@ -82,11 +82,11 @@ const initiateProgram = async function () {
 
 // Event listener to call main function
 
-generateWeather.addEventListener('click', initiateProgram);
+// generateWeather.addEventListener('click', initiateProgram);
 
-export {
-  getWeather,
-  postData,
-  updateUserInterface,
-  initiateProgram
-};
+// export {
+//   getWeather,
+//   postData,
+//   updateUserInterface,
+//   initiateProgram
+// };
