@@ -9,6 +9,13 @@ export async function getDataCall(e) {
 
   userInputData['location'] = await Client.getLocation();
   console.log(userInputData);
+  //alert(`Latitude: ${userInputData.location.latitude}`);
+
+  const lat = userInputData.location.latitude;
+  const lon = userInputData.location.longitude;
+  
+  userInputData['weather'] = await Client.getWeather(lat, lon);
+  console.log(userInputData);
 
   
 }

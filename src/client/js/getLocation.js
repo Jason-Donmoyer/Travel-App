@@ -7,7 +7,7 @@ async function getLocation() {
   let cityName = document.getElementById('city').value;
   console.log(cityName)
   try {
-    await fetch (`http://localhost:8080/results?city=${cityName}`, {
+    await fetch (`http://localhost:8080/location?city=${cityName}`, {
       method: 'GET',
       cache: 'no-cache',
       credentials: 'same-origin',
@@ -19,6 +19,8 @@ async function getLocation() {
     .then(res => res.json())
     .then(async res => {
       console.log(res);
+      locationData.name = res.geonames[0].name;
+      locationData.country = res.geonames[0].countryName;
       locationData.longitude = res.geonames[0].lng;
       locationData.latitude = res.geonames[0].lat;
     });

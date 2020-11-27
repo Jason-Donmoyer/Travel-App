@@ -2,6 +2,7 @@ import './js/getLocation';
 
 import { getDataCall } from './js/app';
 import { getLocation } from './js/getLocation';
+import { getWeather } from './js/getWeather'; 
 
 //const { getLocation } = require('./js/getLocation'); 
 // import {
@@ -27,7 +28,8 @@ const callButton = document.getElementById('generate');
 
 export {
   getDataCall,
-  getLocation
+  getLocation,
+  getWeather,
 }
 
 callButton.addEventListener('click', getDataCall);

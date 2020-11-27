@@ -8,6 +8,7 @@ let projectData = {};
 
 //API Keys
 GN_API_KEY = process.env.GN_API_KEY;
+WB_API_KEY = process.env.WB_API_KEY;
 
 
 // Require Express to run server and routes
@@ -53,9 +54,9 @@ app.get('/', (req, res) => {
 
 // POST route
 
-app.get('/results', async (req, res) => {
+app.get('/location', async (req, res) => {
   console.log(req.query.city);
-  const geoUrl = `http://api.geonames.org/searchJSON?q=${req.query.city}&maxRows=10&username=${GN_API_KEY}`;
+  const geoUrl = `http://api.geonames.org/searchJSON?maxRows=1&q=${req.query.city}&username=${GN_API_KEY}`;
   console.log(geoUrl);
   const response = await fetch(geoUrl);
   //console.log(response);
@@ -70,6 +71,23 @@ app.get('/results', async (req, res) => {
     res.send(data);
   } catch (error) {
     console.log(`There has been error: ${error}`);
+  }
+});
+
+app.get('/weather', async (req, res) => {
+
+  const wbUrl = `https://api.weatherbit.io/v2.0/current?&lat=${req.query.lat}&lon=${req.query.lon}&key=${WB_API_KEY}`;
+  console.log(wbUrl);
+
+  const response = await fetch(wbUrl);
+
+  try {
+    const data = await response.json();
+    console.log(data);
+    res.send(data);
+
+  } catch (error) {
+    console.log(`There has been an error: ${error}`);
   }
 });
 
