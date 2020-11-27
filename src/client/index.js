@@ -1,6 +1,9 @@
 import './js/getLocation';
 
-const { getLocation } = require('./js/getLocation'); 
+import { getDataCall } from './js/app';
+import { getLocation } from './js/getLocation';
+
+//const { getLocation } = require('./js/getLocation'); 
 // import {
 //   getLocation
 // } from './js/getLocation';
@@ -13,13 +16,18 @@ import './styles/style.scss';
 const callButton = document.getElementById('generate');
 
 //TEST FUNCTION
-callButton.addEventListener('click', (e) => {
-  getLocation(e);
-  console.log('clicked');
-  console.count();
-});
+// callButton.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   let cityName = document.getElementById('city').value;
+//   getLocation(cityName);
+//   console.log('clicked');
+//   console.count();
+// });
 
 
 export {
+  getDataCall,
   getLocation
 }
+
+callButton.addEventListener('click', getDataCall);

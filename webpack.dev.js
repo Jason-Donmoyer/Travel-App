@@ -9,6 +9,11 @@ module.exports = {
   entry: './src/client/index.js',
   mode: 'development',
   devtool: 'source-map',
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 8080
+},
   stats: 'verbose',
   output: {
     // filename: '[name.bundle.js]',

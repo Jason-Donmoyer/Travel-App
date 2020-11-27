@@ -4,7 +4,7 @@ dotenv.config();
 
 
 // Setup empty JS object to act as endpoint for all routes
-projectData = {};
+let projectData = {};
 
 //API Keys
 GN_API_KEY = process.env.GN_API_KEY;
@@ -53,24 +53,29 @@ app.get('/', (req, res) => {
 
 // POST route
 
-app.post('/results', async (req, res) => {
-  const response = await fetch(`http://api.geonames.org/searchJSON?q=${req.body}&maxRows=10&username=${GN_API_KEY}`);
+app.get('/results', async (req, res) => {
+  console.log(req.query.city);
+  const geoUrl = `http://api.geonames.org/searchJSON?q=${req.query.city}&maxRows=10&username=${GN_API_KEY}`;
+  console.log(geoUrl);
+  const response = await fetch(geoUrl);
+  //console.log(response);
 
   try {
     const data = await response.json();
+    //console.log(data);
     projectData = {
       data
     };
-    console.log([data.geonames[1].lat], [data.geonames[1].lng]);
+    console.log(data.geonames[0]);
     res.send(data);
   } catch (error) {
     console.log(`There has been error: ${error}`);
   }
 });
 
-app.get('/results', (req, res) => {
-  app.send(projectData);
-});
+// app.get('/results', (req, res) => {
+//   res.send(projectData);
+// });
 
 // app.post('/', (req, res) => {
 //   projectData.temp = req.body.temp;
