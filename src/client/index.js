@@ -1,4 +1,4 @@
-import './js/getLocation';
+//import './js/getLocation';
 
 import { getDataCall } from './js/app';
 import { getLocation } from './js/getLocation';

@@ -76,7 +76,7 @@ app.get('/location', async (req, res) => {
 
 app.get('/weather', async (req, res) => {
 
-  const wbUrl = `https://api.weatherbit.io/v2.0/current?&lat=${req.query.lat}&lon=${req.query.lon}&key=${WB_API_KEY}`;
+  const wbUrl = `https://api.weatherbit.io/v2.0/current?&lat=${req.query.lat}&lon=${req.query.lon}&key=${WB_API_KEY}&units=I`;
   console.log(wbUrl);
 
   const response = await fetch(wbUrl);

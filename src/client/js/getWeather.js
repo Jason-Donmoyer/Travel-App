@@ -16,7 +16,7 @@ try {
     })
     .then (res => res.json())
     .then(async res => {
-      console.log(res.data[0]);
+      console.log(res.data[0].state_code);
       weatherData.temp = res.data[0].temp;
     });
   } catch (err) {
