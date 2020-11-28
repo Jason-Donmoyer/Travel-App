@@ -3,6 +3,7 @@
 import { getDataCall } from './js/app';
 import { getLocation } from './js/getLocation';
 import { getWeather } from './js/getWeather'; 
+import { getPixabay } from './js/getPixabay';
 
 //const { getLocation } = require('./js/getLocation'); 
 // import {
@@ -30,6 +31,7 @@ export {
   getDataCall,
   getLocation,
   getWeather,
+  getPixabay,
 }
 
 callButton.addEventListener('click', getDataCall);

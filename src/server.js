@@ -3,12 +3,12 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 
-// Setup empty JS object to act as endpoint for all routes
-let projectData = {};
+const PORT = 8080;
 
 //API Keys
-GN_API_KEY = process.env.GN_API_KEY;
-WB_API_KEY = process.env.WB_API_KEY;
+const GN_API_KEY = process.env.GN_API_KEY;
+const WB_API_KEY = process.env.WB_API_KEY;
+const PB_API_KEY = process.env.PB_API_KEY;
 
 
 // Require Express to run server and routes
@@ -35,25 +35,21 @@ app.use(express.static('dist'));
 
 // Setup Server
 
-const PORT = 8080;
+
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
 
-// GET routes
 
+// ROUTES
+
+// GET home page
 app.get('/', (req, res) => {
   res.sendFile('dist/index.html');
 });
 
-// app.get('/results', (req, res) => {
-//   res.send(JSON.stringify(projectData));
-//   console.log('Get route called');
-// });
-
-// POST route
-
+// GET geoname
 app.get('/location', async (req, res) => {
   console.log(req.query.city);
   const geoUrl = `http://api.geonames.org/searchJSON?maxRows=1&q=${req.query.city}&username=${GN_API_KEY}`;
@@ -64,9 +60,9 @@ app.get('/location', async (req, res) => {
   try {
     const data = await response.json();
     //console.log(data);
-    projectData = {
-      data
-    };
+    // projectData = {
+    //   data
+    // };
     console.log(data.geonames[0]);
     res.send(data);
   } catch (error) {
@@ -74,6 +70,8 @@ app.get('/location', async (req, res) => {
   }
 });
 
+
+// GET weatherbit
 app.get('/weather', async (req, res) => {
 
   const wbUrl = `https://api.weatherbit.io/v2.0/current?&lat=${req.query.lat}&lon=${req.query.lon}&key=${WB_API_KEY}&units=I`;
@@ -90,6 +88,25 @@ app.get('/weather', async (req, res) => {
     console.log(`There has been an error: ${error}`);
   }
 });
+
+// GET pixabay
+app.get('/pix', async (req, res) => {
+
+  const pbUrl = `https://pixabay.com/api/?q=${req.query.city}&key=${PB_API_KEY}&image_type=photo&per_page=3&category=places`;
+  console.log(pbUrl);
+
+  const response = await fetch(pbUrl);
+
+  try {
+    const data = await response.json();
+    console.log(data);
+    res.send(data);
+  } catch (error) {
+    console.log(`There has been an error: ${error}`);
+  }
+});
+
+
 
 // app.get('/results', (req, res) => {
 //   res.send(projectData);

@@ -17,6 +17,11 @@ export async function getDataCall(e) {
   userInputData['weather'] = await Client.getWeather(lat, lon);
   console.log(userInputData);
 
+  const city = userInputData.location.name;
+
+  userInputData['pixabay'] = await Client.getPixabay(city);
+  console.log(userInputData);
+
   
 }
 
