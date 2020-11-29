@@ -35,8 +35,6 @@ app.use(express.static('dist'));
 
 // Setup Server
 
-
-
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
@@ -107,15 +105,3 @@ app.get('/pix', async (req, res) => {
 });
 
 
-
-// app.get('/results', (req, res) => {
-//   res.send(projectData);
-// });
-
-// app.post('/', (req, res) => {
-//   projectData.temp = req.body.temp;
-//   projectData.date = req.body.date;
-//   projectData.feelings = req.body.feelings;
-//   console.log('Post route called');
-//   res.end();
-// });

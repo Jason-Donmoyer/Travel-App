@@ -22,6 +22,8 @@ export async function getDataCall(e) {
   userInputData['pixabay'] = await Client.getPixabay(city);
   console.log(userInputData);
 
+  //document.querySelector('.test_div').style.backgroundImage = url(userInputData.pixabay.img);
+
   
 }
 
