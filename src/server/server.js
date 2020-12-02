@@ -50,7 +50,7 @@ app.get('/', (req, res) => {
 // GET geoname
 app.get('/location', async (req, res) => {
   console.log(req.query.city);
-  const geoUrl = `http://api.geonames.org/searchJSON?maxRows=1&q=${req.query.city}&username=${GN_API_KEY}`;
+  const geoUrl = `http://api.geonames.org/searchJSON?maxRows=1&q=${req.query.city}&country=${req.query.country}&username=${GN_API_KEY}`;
   console.log(geoUrl);
   const response = await fetch(geoUrl);
   //console.log(response);
@@ -90,7 +90,7 @@ app.get('/weather', async (req, res) => {
 // GET pixabay
 app.get('/pix', async (req, res) => {
 
-  const pbUrl = `https://pixabay.com/api/?q=${req.query.city}&key=${PB_API_KEY}&image_type=photo&per_page=3&category=places`;
+  const pbUrl = `https://pixabay.com/api/?q=${req.query.city}+${req.query.country}&key=${PB_API_KEY}&image_type=photo&per_page=3&category=places`;
   console.log(pbUrl);
 
   const response = await fetch(pbUrl);

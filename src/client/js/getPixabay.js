@@ -1,11 +1,11 @@
 const fetch = require('node-fetch');
 
-async function getPixabay(city) {
+async function getPixabay(city, country) {
 
 let pixData = {};
 
 try {
-  await fetch(`http://localhost:8080/pix?city=${city}`, {
+  await fetch(`http://localhost:8080/pix?city=${city}&country=${country}`, {
     method: 'GET',
       cache: 'no-cache',
       credentials: 'same-origin',

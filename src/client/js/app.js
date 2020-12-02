@@ -18,8 +18,9 @@ export async function getDataCall(e) {
   console.log(userInputData);
 
   const city = userInputData.location.name;
+  const country = userInputData.location.country;
 
-  userInputData['pixabay'] = await Client.getPixabay(city);
+  userInputData['pixabay'] = await Client.getPixabay(city, country);
   console.log(userInputData);
 
   //document.querySelector('.test_div').style.backgroundImage = url(userInputData.pixabay.img);

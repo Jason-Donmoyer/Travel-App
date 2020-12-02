@@ -5,9 +5,10 @@ async function getLocation() {
   let locationData = {};
 
   let cityName = document.getElementById('city').value;
-  console.log(cityName)
+  let countryName = document.getElementById('country').value;
+  console.log(cityName, countryName);
   try {
-    await fetch (`http://localhost:8080/location?city=${cityName}`, {
+    await fetch (`http://localhost:8080/location?city=${cityName}&country=${countryName}`, {
       method: 'GET',
       cache: 'no-cache',
       credentials: 'same-origin',
