@@ -28,12 +28,13 @@ module.exports = {
         loader: "babel-loader"
       },
       {
-        test: /\.png$/,
+        test: /\.png$|\.jpg$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]'
+            name: '[name].[ext]',
+            outputPath: 'icons'
         }
-      },
+    },
       {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
