@@ -15,6 +15,7 @@ module.exports = {
   output: {
     filename: "[name].[contentHash].bundle.js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: '',
     libraryTarget: 'var',
     library: 'Client',
   },
@@ -35,7 +36,8 @@ module.exports = {
         test: /\.png$|\.jpg$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]'
+          name: '[name].[ext]',
+          outputPath: 'media',
         }
       },
       {
@@ -46,7 +48,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].[contentHash].css"
+      filename: "[name].[contentHash].css",
     }),
     new CleanWebpackPlugin({
       dry: false,

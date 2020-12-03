@@ -1,0 +1,19 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ul {
+    flex-direction: row;
+    li {
+      display: inline;
+      padding: 2em;
+      list-style: none;
+      a {
+        text-decoration: none;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+}

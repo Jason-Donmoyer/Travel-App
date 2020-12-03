@@ -10,6 +10,8 @@ import { getPixabay } from './js/getPixabay';
 //   getLocation
 // } from './js/getLocation';
 
+import './media/main-background-img.jpg';
+
 import './styles/style.scss';
 //import './js/app.js';
 
