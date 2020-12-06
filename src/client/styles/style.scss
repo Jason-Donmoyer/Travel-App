@@ -3,14 +3,24 @@
 @import './layout/grid';
 @import './layout/header';
 @import './layout/nav';
+@import './layout/main';
+@import './layout/form';
+@import './layout/footer';
+@import './utilities/variables';
 
 
-@import url("https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap");
+* {
+  &:before {
+    &:after {
+      box-sizing: border-box;
+    }
+  }
+}
 
 .container {
-  height: 100vh;
-  width: 100%;
-  background-color: skyblue;
+  height: 100%;
+  padding: 1em;
+  background-color: $light-steel-blue;
   background-image: url('../media/main-background-img.jpg');
   background-repeat: no-repeat;
   background-size: cover;

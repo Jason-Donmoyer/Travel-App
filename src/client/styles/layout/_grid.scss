@@ -21,3 +21,19 @@ header {
                        'main-header main-header nav';
 }
 
+@media screen and (max-width: 768px) {
+  .container {
+    header {
+      nav {
+        main {
+          footer{
+            display: flex;
+            flex-wrap: wrap;
+          }
+        }
+      }
+    }
+  }
+  
+}
+

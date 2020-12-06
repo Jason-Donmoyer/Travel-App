@@ -1,5 +1,11 @@
+@import '../utilities/variables';
 
+header {
+  padding: 0.2em;
+}
 
 h1 {
   font-size: 2.15em;
+  color: $rich-black;
 }
+

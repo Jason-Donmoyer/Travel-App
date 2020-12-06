@@ -1,0 +1,38 @@
+@import '../utilities/variables';
+
+#form-container {
+  margin: 1em auto;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 90%;
+  background-color: transparentize($dark-blue-gray, 0.75);
+  border-radius: 2px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 1.5em;
+  padding-left: 2px;
+  label {
+    font-size: 1.2em;
+    line-height: 1.95em;
+    padding: .5em;
+    padding-left: 2px;
+    margin-left: 0;
+    text-align: left;
+  }
+  input {
+    border-radius: 2px;
+    padding: .25em;
+  }
+  button {
+    margin: 0 auto;
+    margin-top: 2em;
+  }
+}
+

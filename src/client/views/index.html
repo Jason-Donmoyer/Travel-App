@@ -19,10 +19,10 @@
       </nav>
     </header>
     <main>
-      <section>
+      <section id="form-container">
         <form action="" autocomplete="on">
           <label for="city">Destination City:</label>
-          <input type="text" id="city" name="city" placeholder="Please enter the destination for your trip">
+          <input type="text" id="city" class="input-field" name="city" placeholder="Please enter the destination for your trip">
           <br>
           <label for="country">Destination Country:</label>
           <select name="country" id="country">
@@ -284,6 +284,7 @@
           <br>
           <label for="departure-date">Date you will return:</label>
           <input type="date" id="departure-date" name="departure-date" placeholder="departure date">
+          <br>
           <button id="generate" type="submit">Check Destination Weather</button>
         </form>
       </section>
