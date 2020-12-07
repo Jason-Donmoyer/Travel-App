@@ -4,6 +4,7 @@ import { getDataCall } from './js/app';
 import { getLocation } from './js/getLocation';
 import { getWeather } from './js/getWeather'; 
 import { getPixabay } from './js/getPixabay';
+import { getCurrentDate } from './js/getDate'; 
 
 //const { getLocation } = require('./js/getLocation'); 
 // import {
@@ -34,6 +35,7 @@ export {
   getLocation,
   getWeather,
   getPixabay,
+  getCurrentDate,
 }
 
 callButton.addEventListener('click', getDataCall);

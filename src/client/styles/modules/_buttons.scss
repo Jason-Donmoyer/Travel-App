@@ -1,0 +1,16 @@
+@import '../utilities/variables';
+
+button {
+  height: 2em;
+  padding: 0.6em;
+  border-radius: 4px;
+  border: 0.25 solid $english-violet;
+  background-color: $rich-black;
+  color: $light-steel-blue;
+  box-shadow: 0.25em 0.25em 0.25em $english-violet;
+  &:hover {
+    background-color: $dark-blue-gray;
+    color: $white;
+    cursor: pointer;
+  }
+}
