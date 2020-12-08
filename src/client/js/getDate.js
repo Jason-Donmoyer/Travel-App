@@ -1,10 +1,25 @@
 
 
 async function getCurrentDate() {
-  const date = new Date();
-  const currentDate = date.now();
-  console.log(currentDate);
+  
+  //import { numerizeDate } from './helperFunctions';
+  
+  const currentDate = new Date();
+  const isoDate = currentDate.toISOString();
+  const shortDate = isoDate.replace(/T.*/, '');
+  
+
+  const arrDate = document.getElementById('arrival-date').value;
+  const depDate = document.getElementById('departure-date').value;
+
+  console.log([shortDate, arrDate, depDate]);
+
+  //const numArrDate = numerizeDate(arrDate);
+  //console.log(numArrDate);
+
 }
+
+
 
 
 
