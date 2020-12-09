@@ -1,4 +1,4 @@
-const numerizeDate = (date) => {
+function numerizeDate(date) {
   let newDateArr = [];
   let arrDate = date.split('-');
   arrDate.forEach((x) => {

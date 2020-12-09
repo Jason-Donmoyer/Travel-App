@@ -25,6 +25,8 @@ export async function getDataCall(e) {
 
   await Client.getCurrentDate();
 
+  await Client.updateUI(userInputData['pixabay'].img);
+
   //document.querySelector('.test_div').style.backgroundImage = url(userInputData.pixabay.img);
 
   

@@ -5,6 +5,8 @@ import { getLocation } from './js/getLocation';
 import { getWeather } from './js/getWeather'; 
 import { getPixabay } from './js/getPixabay';
 import { getCurrentDate } from './js/getDate'; 
+import { numerizeDate } from './js/helperFunctions';
+import { updateUI } from './js/updateUI';
 
 //const { getLocation } = require('./js/getLocation'); 
 // import {
@@ -19,6 +21,7 @@ import './styles/style.scss';
 
 
 const callButton = document.getElementById('generate');
+
 
 //TEST FUNCTION
 // callButton.addEventListener('click', (e) => {
@@ -36,6 +39,8 @@ export {
   getWeather,
   getPixabay,
   getCurrentDate,
+  numerizeDate,
+  updateUI,
 }
 
 callButton.addEventListener('click', getDataCall);

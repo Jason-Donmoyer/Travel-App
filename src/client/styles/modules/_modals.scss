@@ -1,0 +1,9 @@
+@import '../utilities/variables';
+
+#modal {
+  height: 500px;
+  width: 90%;
+  background-color: $light-steel-blue;
+  background-size: cover;
+  display: none;
+}

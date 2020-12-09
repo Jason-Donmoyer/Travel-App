@@ -14,8 +14,9 @@ async function getCurrentDate() {
 
   console.log([shortDate, arrDate, depDate]);
 
-  //const numArrDate = numerizeDate(arrDate);
-  //console.log(numArrDate);
+  const numArrDate = Client.numerizeDate(arrDate);
+  console.log(numArrDate);
+  
 
 }
 
