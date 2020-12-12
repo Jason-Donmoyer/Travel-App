@@ -1,9 +1,19 @@
 @import '../utilities/variables';
 
 #modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 500px;
   width: 90%;
   background-color: $light-steel-blue;
   background-size: cover;
   display: none;
+}
+
+#weather-container {
+  background-color: transparentize($white, 0.2);
+  padding: 1.5em;
+  border-radius: 4px;
 }

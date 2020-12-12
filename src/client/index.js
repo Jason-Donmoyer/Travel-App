@@ -6,6 +6,7 @@ import { getWeather } from './js/getWeather';
 import { getPixabay } from './js/getPixabay';
 import { getCurrentDate } from './js/getDate'; 
 import { numerizeDate } from './js/helperFunctions';
+import { firstCharUpper } from './js/helperFunctions';
 import { updateUI } from './js/updateUI';
 
 //const { getLocation } = require('./js/getLocation'); 
@@ -40,6 +41,7 @@ export {
   getPixabay,
   getCurrentDate,
   numerizeDate,
+  firstCharUpper,
   updateUI,
 }
 
