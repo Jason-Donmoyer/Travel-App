@@ -1,14 +1,14 @@
 
-// Function to convert Date Oject from string to int
-function numerizeDate(date) {
-  let newDateArr = [];
-  let arrDate = date.split('-');
-  arrDate.forEach((x) => {
+// // Function to convert Date Oject from string to int
+// function numerizeDate(date) {
+//   let newDateArr = [];
+//   let arrDate = date.split('-');
+//   arrDate.forEach((x) => {
     
-    newDateArr.push(parseInt(x));
-  });
-  return newDateArr;
-}
+//     newDateArr.push(parseInt(x));
+//   });
+//   return newDateArr;
+// }
 
 // Function to capitalize first letter of stringify
 function firstCharUpper(str) {
@@ -21,6 +21,4 @@ function firstCharUpper(str) {
 }
 
 
-export { numerizeDate,
-         firstCharUpper
- };
+export { firstCharUpper };

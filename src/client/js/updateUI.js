@@ -14,7 +14,7 @@ async function updateUI(image, temp, forcast) {
   modalHeader.innerHTML = cityName;
   arrivalDate.innerHTML = document.getElementById('arrival-date').value;
   departureDate.innerHTML = document.getElementById('departure-date').value;
-  temperature.innerHTML = parseInt(temp);
+  temperature.innerHTML = temp;
   textForcast.innerHTML = forcast;
   console.log([temperature, textForcast]);
   
@@ -27,6 +27,7 @@ async function updateUI(image, temp, forcast) {
   refreshButton.addEventListener('click', () => {
     form.style.display = 'flex';
     modal.style.display = 'none';
+    //locationName.innerText = '';
   });
 }
 

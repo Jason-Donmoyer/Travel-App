@@ -23,7 +23,7 @@ export async function getDataCall(e) {
   userInputData['pixabay'] = await Client.getPixabay(city, country);
   console.log(userInputData);
 
-  await Client.getCurrentDate();
+  await Client.getCurrentDate() ;
 
   await Client.updateUI(userInputData['pixabay'].img,
                         userInputData['weather'].temp, 
