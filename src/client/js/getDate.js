@@ -1,9 +1,9 @@
 
 
-async function getCurrentDate() {
+function getCurrentDate() {
   
   //import { numerizeDate } from './helperFunctions';
-  
+  let dateData = [];
   let lessThanOneWeek;
   
   // get todays date and shorten format using regex
@@ -48,6 +48,11 @@ async function getCurrentDate() {
   }
 
   console.log(lessThanOneWeek);
+
+  dateData.push(lessThanOneWeek);
+  dateData.push(Diff_Days);
+
+  return dateData;
 
 
 

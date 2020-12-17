@@ -7,14 +7,38 @@ export async function getDataCall(e) {
 
   let userInputData = [];
 
+  // if (await Client.getCurrentDate()) {
+  //   alert('You\'re trip is this week');
+  // }
+
+  
+
+  const dateData = Client.getCurrentDate();
+  const isOneWeek = dateData[0];
+  const numDays = dateData[1];
+  console.log([isOneWeek, numDays]);
+
+  if (numDays > 21) {
+    alert('Please check back when your trip is less than three weeks away!');
+  }
+
   userInputData['location'] = await Client.getLocation();
   console.log(userInputData);
   //alert(`Latitude: ${userInputData.location.latitude}`);
 
+  if (userInputData['location'] === undefined) {
+    userInputData['location'] = await Client.getCountryLocation();
+  }
+
   const lat = userInputData.location.latitude;
   const lon = userInputData.location.longitude;
+
+  if (isOneWeek) {
+    userInputData['weather'] = await Client.getWeather(lat, lon);
+  } else {
+    userInputData['weather'] = await Client.getForecast(lat, lon, numDays);
+  }
   
-  userInputData['weather'] = await Client.getWeather(lat, lon);
   console.log(userInputData);
 
   const city = userInputData.location.name;
@@ -23,7 +47,11 @@ export async function getDataCall(e) {
   userInputData['pixabay'] = await Client.getPixabay(city, country);
   console.log(userInputData);
 
-  await Client.getCurrentDate() ;
+  if (userInputData['pixabay'] === undefined) {
+    userInputData['pixaby'] = await Client.getPixabayCountry(country);
+  }
+
+  
 
   await Client.updateUI(userInputData['pixabay'].img,
                         userInputData['weather'].temp, 

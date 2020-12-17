@@ -22,10 +22,10 @@
       <section id="form-container">
         <form action="" autocomplete="on">
           <label for="city">Destination City:</label>
-          <input type="text" id="city" class="input-field" name="city" placeholder="Please enter the destination for your trip">
+          <input type="text" id="city" class="input-field" name="city" placeholder="Please enter the destination for your trip" required=true>
           <br>
           <label for="country">Destination Country:</label>
-          <select name="country" id="country">
+          <select name="country" id="country" required>
             <option value="AF">Afghanistan</option>
             <option value="AL">Albania</option>
             <option value="DZ">Algeria</option>
@@ -280,7 +280,7 @@
           </select>
           <br>
           <label for="arrival-date">Date you will arrive:</label>
-          <input type="date" id="arrival-date" name="arrival-date" placeholder="arrival date">
+          <input type="date" id="arrival-date" name="arrival-date" placeholder="arrival date" required>
           <br>
           <label for="departure-date">Date you will return:</label>
           <input type="date" id="departure-date" name="departure-date" placeholder="departure date">

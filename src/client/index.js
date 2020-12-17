@@ -2,10 +2,12 @@
 
 import { getDataCall } from './js/app';
 import { getLocation } from './js/getLocation';
+import { getCountryLocation } from './js/getLocation';
 import { getWeather } from './js/getWeather'; 
+import { getForecast } from './js/getWeather';
 import { getPixabay } from './js/getPixabay';
+import { getPixabayCountry } from './js/getPixabay';
 import { getCurrentDate } from './js/getDate'; 
-import { numerizeDate } from './js/helperFunctions';
 import { firstCharUpper } from './js/helperFunctions';
 import { updateUI } from './js/updateUI';
 
@@ -37,12 +39,16 @@ const callButton = document.getElementById('generate');
 export {
   getDataCall,
   getLocation,
+  getCountryLocation,
   getWeather,
+  getForecast,
   getPixabay,
+  getPixabayCountry,
   getCurrentDate,
-  numerizeDate,
   firstCharUpper,
   updateUI,
 }
+
+
 
 callButton.addEventListener('click', getDataCall);
