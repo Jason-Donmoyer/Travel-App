@@ -17,7 +17,6 @@ async function getLocation() {
       headers: {
         'Content-Type': 'application/json'
       },
-      //body: JSON.stringify(cityName),
     })
     .then(res => res.json())
     .then(async res => {
@@ -36,7 +35,6 @@ async function getLocation() {
 async function getCountryLocation() {
   let locationData = {};
 
-  //let cityName = document.getElementById('city').value;
   let countryName = document.getElementById('country').value;
   console.log(cityName, countryName);
   try {
@@ -47,12 +45,10 @@ async function getCountryLocation() {
       headers: {
         'Content-Type': 'application/json'
       },
-      //body: JSON.stringify(cityName),
     })
     .then(res => res.json())
     .then(async res => {
       console.log(res);
-      //locationData.name = res.geonames[0].name;
       locationData.country = res.geonames[0].countryName;
       locationData.longitude = res.geonames[0].lng;
       locationData.latitude = res.geonames[0].lat;

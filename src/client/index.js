@@ -1,4 +1,4 @@
-//import './js/getLocation';
+// IMPORTS
 
 import { getDataCall } from './js/app';
 import { getLocation } from './js/getLocation';
@@ -11,31 +11,16 @@ import { getCurrentDate } from './js/getDate';
 import { firstCharUpper } from './js/helperFunctions';
 import { updateUI } from './js/updateUI';
 
-//const { getLocation } = require('./js/getLocation'); 
-// import {
-//   getLocation
-// } from './js/getLocation';
-
+// Images
 import './media/main-background-img.jpg';
 
+// Styles
 import './styles/style.scss';
-//import './js/app.js';
 
-
-
+// Main submit Button
 const callButton = document.getElementById('generate');
 
-
-//TEST FUNCTION
-// callButton.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   let cityName = document.getElementById('city').value;
-//   getLocation(cityName);
-//   console.log('clicked');
-//   console.count();
-// });
-
-
+// EXPORTS
 export {
   getDataCall,
   getLocation,
@@ -49,6 +34,5 @@ export {
   updateUI,
 }
 
-
-
+// Event listener for callButton
 callButton.addEventListener('click', getDataCall);

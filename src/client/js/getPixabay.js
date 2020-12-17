@@ -26,6 +26,7 @@ try {
 return pixData;
 }
 
+// get pic data for country
 async function getPixabayCountry(country) {
 
   let pixData = {};

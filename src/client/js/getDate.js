@@ -54,12 +54,6 @@ function getCurrentDate() {
 
   return dateData;
 
-
-
-  //const numArrDate = Client.numerizeDate(arrDate);
-  //console.log(numArrDate);
-  
-
 }
 
 

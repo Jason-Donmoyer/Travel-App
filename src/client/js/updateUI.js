@@ -27,7 +27,6 @@ async function updateUI(image, temp, forcast) {
   refreshButton.addEventListener('click', () => {
     form.style.display = 'flex';
     modal.style.display = 'none';
-    //locationName.innerText = '';
   });
 }
 

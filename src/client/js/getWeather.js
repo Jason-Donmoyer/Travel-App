@@ -12,12 +12,9 @@ try {
       headers: {
         'Content-Type': 'application/json'
       },
-      //body: JSON.stringify(cityName),
     })
     .then (res => res.json())
     .then(async res => {
-      //console.log(res.data[0].state_code);
-      //console.log(res.data[0].weather.description);
       weatherData.temp = res.data[0].temp;
       weatherData.description = res.data[0].weather.description;
     });
@@ -40,12 +37,9 @@ async function getForecast(lat, lon, date) {
         headers: {
           'Content-Type': 'application/json'
         },
-        //body: JSON.stringify(cityName),
       })
       .then (res => res.json())
       .then(async res => {
-        //console.log(res.data[0].state_code);
-        //console.log(res.data[0].weather.description);
         weatherData.temp = res.data[date].temp;
         weatherData.description = res.data[date].weather.description;
       });

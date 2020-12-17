@@ -1,8 +1,9 @@
+// require node-fetch and dotenv
 const fetch = require('node-fetch');
 const dotenv = require('dotenv');
 dotenv.config();
 
-
+// Server Port
 const PORT = 8080;
 
 //API Keys
@@ -11,30 +12,28 @@ const WB_API_KEY = process.env.WB_API_KEY;
 const PB_API_KEY = process.env.PB_API_KEY;
 
 
-// Require Express to run server and routes
+// require Express
 const express = require('express');
 
-// Start up an instance of app
+// set up Express
 const app = express();
 
-/* Middleware*/
-//Here we are configuring express to use body-parser as middle-ware.
+// require and set up body-parser
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(bodyParser.json());
 
-// Cors for cross origin allowance
+// require and set up Ccors
 const cors = require('cors');
 app.use(cors());
 
-// Initialize the main project folder
+// Main project folder
 app.use(express.static('dist'));
 
 
 // Setup Server
-
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
@@ -53,14 +52,9 @@ app.get('/location', async (req, res) => {
   const geoUrl = `http://api.geonames.org/searchJSON?maxRows=1&q=${req.query.city}&country=${req.query.country}&username=${GN_API_KEY}`;
   console.log(geoUrl);
   const response = await fetch(geoUrl);
-  //console.log(response);
 
   try {
     const data = await response.json();
-    //console.log(data);
-    // projectData = {
-    //   data
-    // };
     console.log(data.geonames[0]);
     res.send(data);
   } catch (error) {
@@ -74,14 +68,9 @@ app.get('/locationcountry', async (req, res) => {
   const geoUrl = `http://api.geonames.org/searchJSON?maxRows=1&country=${req.query.country}&username=${GN_API_KEY}`;
   console.log(geoUrl);
   const response = await fetch(geoUrl);
-  //console.log(response);
 
   try {
     const data = await response.json();
-    //console.log(data);
-    // projectData = {
-    //   data
-    // };
     console.log(data.geonames[0]);
     res.send(data);
   } catch (error) {
