@@ -10,7 +10,7 @@
 @import './layout/footer';
 @import './utilities/variables';
 
-
+// global box sizing
 * {
   &:before {
     &:after {
@@ -19,6 +19,7 @@
   }
 }
 
+// Main container styles
 .container {
   height: 100vh;
   padding: 1em;
