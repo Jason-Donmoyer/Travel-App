@@ -21,7 +21,14 @@ export async function getDataCall(e) {
   const dateData = Client.getCurrentDate();
   const isOneWeek = dateData[0];
   const numDays = dateData[1];
-  console.log([isOneWeek, numDays]);
+  let tripLength;
+  if (!dateData[2]) {
+    tripLength = 0;
+  } else {
+    tripLength = dateData[2];
+  }
+  console.log([isOneWeek, numDays, tripLength]);
+  
 
   // check to see if trip is within Weatherbit forecast boundaries
   if (numDays > 14) {
@@ -61,10 +68,13 @@ export async function getDataCall(e) {
     userInputData['pixaby'] = await Client.getPixabayCountry(country);
   }
 
+  
+
   // call updateUI function
   await Client.updateUI(userInputData['pixabay'].img,
                         userInputData['weather'].temp, 
-                        userInputData['weather'].description);
+                        userInputData['weather'].description,
+                        tripLength);
   
 }
 

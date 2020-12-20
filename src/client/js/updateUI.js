@@ -1,9 +1,9 @@
-async function updateUI(image, temp, forcast) {
+async function updateUI(image, temp, forcast, lengthOfTrip) {
   const form = document.querySelector('form');
   const modal = document.querySelector('#modal');
   const modalHeader = document.getElementById('destination-name');
   const arrivalDate = document.getElementById('arrival-span');
-  const departureDate = document.getElementById('departure-span');
+  const tripLength = document.getElementById('trip-length-span');
   const temperature = document.querySelector('#temp-data');
   const textForcast = document.querySelector('#text-forcast');
 
@@ -13,7 +13,7 @@ async function updateUI(image, temp, forcast) {
   modal.style.backgroundImage = `url(${image})`;
   modalHeader.innerHTML = cityName;
   arrivalDate.innerHTML = document.getElementById('arrival-date').value;
-  departureDate.innerHTML = document.getElementById('departure-date').value;
+  tripLength.innerHTML = lengthOfTrip;
   temperature.innerHTML = temp;
   textForcast.innerHTML = forcast;
   console.log([temperature, textForcast]);

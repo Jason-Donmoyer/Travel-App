@@ -36,6 +36,10 @@ function getCurrentDate() {
   const Diff_Days = Diff_Time / (1000 * 3600 * 24); 
   console.log(Diff_Days);
 
+  const Trip_Time = returnDate.getTime() - arrivalDate.getTime();
+  const Trip_Days = Trip_Time / (1000 * 3600 * 24);
+  console.log(Trip_Days);
+
 
   if (Diff_Time < 0) {
     alert('Please Enter A Date Today Or After');
@@ -51,6 +55,7 @@ function getCurrentDate() {
 
   dateData.push(lessThanOneWeek);
   dateData.push(Diff_Days);
+  dateData.push(Trip_Days);
 
   return dateData;
 
