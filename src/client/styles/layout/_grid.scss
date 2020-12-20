@@ -13,6 +13,7 @@ nav { grid-area: 'nav' };
                        'main main main main'
                        'main main main main'
                        'footer';
+  
 }
 
 header {
@@ -21,19 +22,6 @@ header {
                        'main-header main-header nav';
 }
 
-@media screen and (max-width: 768px) {
-  .container {
-    header {
-      nav {
-        main {
-          footer{
-            display: flex;
-            flex-wrap: wrap;
-          }
-        }
-      }
-    }
-  }
-  
-}
+
+
 
