@@ -149,3 +149,6 @@ app.get('/countrypix', async (req, res) => {
   }
 });
 
+// export for testing
+module.exports = app;
+
